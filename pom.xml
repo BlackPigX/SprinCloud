@@ -17,7 +17,9 @@
     </parent>
 
     <modules>
-        <module>eureka-1001</module>
+        <module>eureka-2001</module>
+        <module>eureka-2002</module>
+        <module>eureka-2003</module>
         <module>user-3001</module>
         <module>user-3002</module>
         <module>gateway4001</module>

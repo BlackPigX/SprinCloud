@@ -5,7 +5,7 @@ spring:
     name: api-gateway
   cloud:
     gateway:
-      discovery:
+      discovery:   #是否与服务注册于发现组件进行结合，通过 serviceId 转发到具体的服务实例
         locator:
           enabled: true
       routes:
@@ -15,7 +15,8 @@ spring:
             - Path=/user-service/**     #断言，路径相匹配的进行路由
           filters:
             - RewritePath=/user-service/(?<segment>.*), /$\{segment} #路径重写，通过正则表达式的方式，去掉路径中的user-service
+#            - RewritePath=/user-service/**，/**
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:2001/eureka/
+      defaultZone: http://eureka2001.com:2001/eureka/,http://eureka2002.com:2002/eureka/,http://eureka2003.com:2003/eureka/
